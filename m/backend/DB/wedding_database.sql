@@ -34,7 +34,7 @@ INSERT INTO wedding.domka (id, surname, dob, email, age, hobbies, hairColor, hei
 DELIMITER $$
 
 DROP EVENT IF EXISTS `wedding`.`age_update_domka`$$
-CREATE DEFINER=`root`@`sql11.hostcreators.sk:3316` EVENT `wedding`.`age_update_domka` 
+CREATE DEFINER=`root`@`domkamichal.eu` EVENT `wedding`.`age_update_domka` 
 ON SCHEDULE EVERY 1 YEAR STARTS '2024-07-19 00:00:00' 
 ON COMPLETION NOT PRESERVE ENABLE DO BEGIN 
 
@@ -81,7 +81,7 @@ INSERT INTO wedding.mitko (id, surname, dob, meetingPlace, age, hobbies, car, he
 DELIMITER $$
 
 DROP EVENT IF EXISTS `wedding`.`age_update_mitko`$$
-CREATE DEFINER=`root`@`sql11.hostcreators.sk:3316` EVENT `wedding`.`age_update_mitko` 
+CREATE DEFINER=`root`@`domkamichal.eu` EVENT `wedding`.`age_update_mitko` 
 ON SCHEDULE EVERY 1 YEAR STARTS '2024-07-26 00:00:00' 
 ON COMPLETION NOT PRESERVE ENABLE DO BEGIN 
 
