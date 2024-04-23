@@ -1,0 +1,123 @@
+
+/*mitko party*/
+/*************/
+
+.mitko-wrapper {
+  position: fixed;
+  width: 28vw;
+  height: 38vw;
+}
+
+.mitko {
+    width: 12vw; /* Adjust size as needed */
+    height: auto; /* Adjust size as needed */
+    transition: width 0.5s, height 0.5s;
+    position: absolute;
+}
+
+.mitko-oblacik {
+    width: 23vw; /* Adjust size as needed */
+    height: auto; /* Adjust size as needed */
+    position: absolute;
+}
+
+.mitko-oblacik-wrapper {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.mitko-oblacik-wrapper p {
+    position: absolute;
+    top: 5vw;
+    font-size: 1.5vw;
+    font-family: 'Lobster';
+}
+
+.mitko:hover + .mitko-oblacik-wrapper {
+  visibility: visible;
+}
+
+.mitko:hover {
+  width: 14vw;
+}
+
+/*domka party*/
+/*************/
+
+.domka-wrapper {
+  position: fixed;
+  width: 29vw;
+  height: 38vw;
+}
+
+.domka {
+    width: 14vw; /* Adjust size as needed */
+    height: auto; /* Adjust size as needed */
+    transition: width 0.5s, height 0.5s;
+    position: absolute;
+}
+
+.domka-oblacik {
+    width: 23vw; /* Adjust size as needed */
+    height: auto; /* Adjust size as needed */
+    position: absolute;
+    transform: scaleX(-1);
+}
+
+.domka-oblacik-wrapper {
+    position: absolute;
+    width: 20vw;
+    height: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.domka-oblacik-wrapper p {
+    position: absolute;
+    left: 5.5vw;
+    top: 5vw;
+    font-size: 1.5vw;
+    font-family: 'Lobster';
+}
+
+.domka:hover + .domka-oblacik-wrapper {
+  visibility: visible;
+}
+
+.domka:hover {
+  width: 16vw;
+}
+
+
+/*to corners adjustment*/
+/***********************/
+.bottom-left-md {
+  bottom: 0;
+  left: 0;
+  /* transform: scaleX(-1) scaleY(-1); */
+}
+
+.bottom-right-md {
+  bottom: 0;
+  right: 0;
+  /* transform: scaleY(-1); */
+}
+
+.top-left-md {
+  top: 0;
+  left: 0;
+  /* transform: scaleY(-1); */
+}
+
+.top-right-md {
+  top: 0;
+  right: 0;
+  /* transform: scaleY(-1); */
+}

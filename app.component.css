@@ -1,0 +1,46 @@
+
+body, html {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.border-app {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  border: 15px solid #d9a74a; 
+  box-sizing: border-box;
+  background-color: rgb(255, 253, 147);
+}
+
+.flower-app {
+  position: absolute;
+  width: 7%; /* Adjust size as needed */
+  height: auto; /* Adjust size as needed */
+  margin: -15px;
+}
+
+.top-left-app {
+  top: 0;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.top-right-app {
+  top: 0;
+  right: 0;
+}
+
+.bottom-left-app {
+  bottom: 0;
+  left: 0;
+  /* transform: scaleX(-1) scaleY(-1); */
+}
+
+.bottom-right-app {
+  bottom: 0;
+  right: 0;
+  /* transform: scaleY(-1); */
+}
