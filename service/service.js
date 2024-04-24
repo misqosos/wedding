@@ -1,6 +1,6 @@
 
 async function getCorrectDomka() {
-    const response = await fetch('https://domkamichal.eu/index_domka.php', {  
+    const response = await fetch('https://domkamichal.eu', {  
         headers: {  
           Accept: "application/json"  
         }  
