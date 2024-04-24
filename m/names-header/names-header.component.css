@@ -15,7 +15,7 @@
     top: 0vh;
 }
 
-.title-names-header:hover, .title-names-header:active .menu-wrapper-names-header {
+.title-names-header:touch .menu-wrapper-names-header {
     height: 16vh;
 }
 
