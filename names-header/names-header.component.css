@@ -32,8 +32,8 @@
     }
     a {
         text-decoration: none;
-        text-decoration-line: none;
-        -webkit-text-decoration-line: none;
+        text-decoration-skip: skip;
+        -webkit-text-decoration-skip: skip;
         color: rgb(218, 98, 12);
         font-family: 'Lobster';
         font-size: 1.5vw;
