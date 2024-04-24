@@ -29,8 +29,10 @@
     }
 
     function slideDownHeader(){
-        var height = document.getElementById('menu').style.height;
-        if(height == '16vh') { height = 0; return }
-        height = '16vh';
+        if(document.getElementById('menu').style.height > 0) { 
+            document.getElementById('menu').style.height = 0; 
+            return;
+         }
+        document.getElementById('menu').style.height = '16vh';
     }
 </script>
