@@ -4,13 +4,13 @@
 
 .mitko-wrapper {
   position: fixed;
-  width: 28vh;
-  height: 38vh;
+  width: auto;
+  height: auto;
 }
 
 .mitko {
-    width: 12vh; /* Adjust size as needed */
-    height: auto; /* Adjust size as needed */
+    width: 12vh;
+    height: auto; 
     transition: width 0.5s, height 0.5s;
     position: absolute;
     
@@ -19,8 +19,8 @@
 }
 
 .mitko-oblacik {
-    width: 23vh; /* Adjust size as needed */
-    height: auto; /* Adjust size as needed */
+    width: 23vh;
+    height: auto;
     position: absolute;
 }
 
