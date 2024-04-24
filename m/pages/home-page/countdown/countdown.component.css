@@ -1,66 +1,69 @@
 
 .count-down-timer {
-background-color: rgb(255, 253, 147);
-box-shadow: 0px 0px 8px 8px rgb(0 0 0 / 15%);
-text-align: center;
-width: 88vw;
-height: 32vh;
-margin: 0 auto;
-color: #d9a74a;
-border-radius: 6px 6px 0px 0px;
-padding: 0 auto;
-font-family: 'Lobster';
-font-size: 2vh;
-word-spacing: 0.5vh;
-position: fixed;
-left: 0;
-right: 0;
+  background-color: rgb(255, 253, 147);
+  box-shadow: 0px 0px 8px 8px rgb(0 0 0 / 15%);
+  text-align: center;
+  width: 88vw;
+  height: 32vh;
+  margin: 0 auto;
+  color: #d9a74a;
+  border-radius: 6px 6px 0px 0px;
+  padding: 0 auto;
+  font-family: 'Lobster';
+  font-size: 2vh;
+  word-spacing: 0.5vh;
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 
 .count-down-timer > p {
-margin: 0;
+  margin: 0;
 }
 
 .wrapper .times .description {
-display: grid;
-grid-template-columns: repeat(5, calc(20% - 1vh));
-grid-column-gap: 0.5vh;
-margin-left: 2.5vh;
+  display: grid;
+  grid-template-columns: repeat(5, calc(20% - 1vh));
+  grid-column-gap: 0.5vh;
+  margin-left: 2.5vh;
 }
+
 .times {
-display: grid;
-grid-template-columns: repeat(5, calc(20% - 1vh));
-grid-column-gap: 0.5vh;
+  display: grid;
+  grid-template-columns: repeat(5, calc(20% - 1vh));
+  grid-column-gap: 0.5vh;
+  margin-left: 2.5vh;
 }
 
 .description {
-display: grid;
-grid-template-columns: repeat(5, calc(20% - 1vh));
-grid-column-gap: 0.5vh;
+  display: grid;
+  grid-template-columns: repeat(5, calc(20% - 1vh));
+  grid-column-gap: 0.5vh;
+  margin-left: 2.5vh;
 }
 
 .description > p {
-margin-bottom: 2vh;
-font: normal 2vh lobster;
-margin: 0;
-margin-bottom: 1vh;
+  margin-bottom: 2vh;
+  font: normal 2vh lobster;
+  margin: 0;
+  margin-bottom: 1vh;
 }
 
 .times p ::ng-deep img {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-width: 8vh;
-display: block;
-height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8vh;
+  display: block;
+  height: 30px;
 }
 
 .times p {
-letter-spacing: 0;
-position: relative;
-margin: 0;
-font: normal 5vh lobster;
+  letter-spacing: 0;
+  position: relative;
+  margin: 0;
+  font: normal 5vh lobster;
 }
 
 @media screen and (max-width: 8vh) {
@@ -70,13 +73,13 @@ font: normal 5vh lobster;
 }
 
 .icon {
-display: flex;
-justify-content: center;
-align-items: center;
-font-size: 14vh;
-height: 17vh;
--webkit-text-stroke-width: 0.1vh;
--webkit-text-stroke-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14vh;
+  height: 17vh;
+  -webkit-text-stroke-width: 0.1vh;
+  -webkit-text-stroke-color: black;
 }
 
 #slide-countdown {
