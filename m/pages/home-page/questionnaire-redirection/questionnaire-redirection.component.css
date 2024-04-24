@@ -68,7 +68,7 @@
     position: absolute;
     
     animation-name: 'domka-zoom';
-    animation-duration: 3s;
+    animation-duration: 1.5s;
 }
 
 .domka-oblacik {
@@ -88,7 +88,7 @@
     visibility: hidden;
 
     animation-name: 'oblacik-show';
-    animation-duration: 3s;
+    animation-duration: 1.5s;
 }
 
 .domka-oblacik-wrapper p {
@@ -135,7 +135,8 @@
 }
 
 @keyframes oblacik-show {
-  50% { visibility: visible; }
+  50% { visibility: hidden; }
+  99% { visibility: visible; }
   100% { visibility: hidden; }
 }
 

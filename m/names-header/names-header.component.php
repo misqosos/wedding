@@ -37,9 +37,11 @@
     }
 
     function showMenu(){
-        setTimeout(() => {
-            document.getElementById("menu").style.height = '24vh';
-            menuShowed = true;
-        }, 100);
+        if (!menuShowed) {
+            setTimeout(() => {
+                document.getElementById("menu").style.height = '24vh';
+                menuShowed = true;
+            }, 100);
+        }
     }
 </script>
