@@ -31,6 +31,6 @@
     function slideDownHeader(){
         if(document.getElementById('menu').style.height == 0) { 
             document.getElementById('menu').style.height = '16vh';
-        } else { document.getElementById('menu').style.height = 0; }
+        } else { document.getElementById('menu').style.height.reset(); }
     }
 </script>
