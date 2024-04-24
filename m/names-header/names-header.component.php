@@ -6,7 +6,7 @@
 </style>
 <div class="title-names-header" id="slide-names-header" onclick="showMenu()">
     <div class="menu-wrapper-names-header" id="menu">
-        <li><p style="font-size: 2.5vh;">Menu</p></li>
+        <li style="margin-bottom: 1vh;"><p style="font-size: 2.5vh;">Menu</p></li>
         <li><a href="">Náš príbeh</a></li>
         <li><a href="">Čo budem piť?</a></li>
         <li><a href="">Ako sa tam dostanem?</a></li>
@@ -29,10 +29,10 @@
     }
 
     function showMenu(){
-        if(document.getElementById("menu").style.height == '16vh') {
+        if(document.getElementById("menu").style.height == '24vh') {
             document.getElementById("menu").style.height = '0vh';
             return;
         }
-        document.getElementById("menu").style.height = '16vh';
+        document.getElementById("menu").style.height = '24vh';
     }
 </script>

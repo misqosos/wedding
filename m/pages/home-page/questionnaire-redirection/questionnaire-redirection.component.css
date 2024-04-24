@@ -14,7 +14,7 @@
     transition: width 0.5s, height 0.5s;
     position: absolute;
     
-    animation-name: 'mitko-zoom';
+    animation-name: 'image-zoom';
     animation-duration: 3s;
 }
 
@@ -33,7 +33,7 @@
     align-items: center;
     visibility: hidden;
 
-    animation-name: 'mitko-oblacik-show';
+    animation-name: 'oblacik-show';
     animation-duration: 3s;
 }
 
@@ -66,6 +66,9 @@
     height: auto; /* Adjust size as needed */
     transition: width 0.5s, height 0.5s;
     position: absolute;
+    
+    animation-name: 'image-zoom';
+    animation-duration: 3s;
 }
 
 .domka-oblacik {
@@ -83,6 +86,9 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
+
+    animation-name: 'oblacik-show';
+    animation-duration: 3s;
 }
 
 .domka-oblacik-wrapper p {
@@ -128,12 +134,12 @@
   /* transform: scaleY(-1); */
 }
 
-@keyframes mitko-oblacik-show {
+@keyframes oblacik-show {
   50% { visibility: visible; }
   100% { visibility: hidden; }
 }
 
-@keyframes mitko-zoom {
+@keyframes image-zoom {
   50% { width: 14vh; }
   100% { width: 12vh; }
 }

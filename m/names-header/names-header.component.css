@@ -20,7 +20,7 @@
     transition: height 0.5s;
     height: 0;
     overflow: hidden;
-    line-height: 3vh;
+    line-height: 4vh;
 }
 
 .menu-wrapper-names-header li {
@@ -31,7 +31,7 @@
     text-decoration: none;
     color: rgb(218, 98, 12);
     font-family: 'Lobster';
-    font-size: 1.5vh;
+    font-size: 3vh;
     -webkit-text-stroke-width: 0.6px;
     -webkit-text-stroke-color: black;
 }
