@@ -15,13 +15,13 @@ function postDomka(formular) {
 }
 
 async function getCorrectMitko() {
-    const response = await fetch('https://domkamichal.eu/backend/domka/index_mitko.php');
+    const response = await fetch('https://domkamichal.eu/backend/mitko/index_mitko.php');
     const json = await response.json();
     return json;
 }
   
 function postMitko(formular) {
-    fetch('https://domkamichal.eu/backend/domka/index_mitko.php', {
+    fetch('https://domkamichal.eu/backend/mitko/index_mitko.php', {
         method: "POST",
         body: JSON.stringify(formular)
     })
