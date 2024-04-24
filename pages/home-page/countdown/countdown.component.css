@@ -19,12 +19,12 @@
     margin: 0;
   }
   
-  .wrapper {
+  .wrapper .times .description {
     display: grid;
     grid-template-columns: repeat(5, calc(20% - 10px));
     grid-column-gap: 10px;
   }
-
+  
   .times {
     display: grid;
     grid-template-columns: repeat(5, calc(20% - 10px));
