@@ -19,7 +19,7 @@
         public function __construct() {}
 
         function postMitko($mitko){
-            $sql = 'INSERT INTO wedding.mitko (surname, dob, meetingPlace, age, hobbies, car, height, favSport, hasSeenParentsFirst, isAllCorrect) 
+            $sql = 'INSERT INTO d29120_wedding.mitko (surname, dob, meetingPlace, age, hobbies, car, height, favSport, hasSeenParentsFirst, isAllCorrect) 
                     VALUES 
                     (
                         :surname,
@@ -70,7 +70,7 @@
         }
 
         function getCorrectMitko(){
-            $sql = 'SELECT * FROM wedding.mitko WHERE id = 1';
+            $sql = 'SELECT * FROM d29120_wedding.mitko WHERE id = 1';
             
             $result = DbConnection::getDatabaseConnection()->query($sql);
             $row = $result->fetch(PDO::FETCH_ASSOC);
@@ -78,7 +78,7 @@
         }
 
         function getPostedRecord(){
-            $sql = 'SELECT * FROM wedding.mitko ORDER BY id DESC LIMIT 1';
+            $sql = 'SELECT * FROM d29120_wedding.mitko ORDER BY id DESC LIMIT 1';
             
             $result = DbConnection::getDatabaseConnection()->query($sql);
             $row = $result->fetch(PDO::FETCH_ASSOC); 

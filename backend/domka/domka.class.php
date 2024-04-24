@@ -19,7 +19,7 @@
         public function __construct() {}
 
         function postDomka($domka){
-            $sql = 'INSERT INTO wedding.domka (surname, dob, email, age, hobbies, hairColor, height, favColor, sentFirstMessage, isAllCorrect) 
+            $sql = 'INSERT INTO d29120_wedding.domka (surname, dob, email, age, hobbies, hairColor, height, favColor, sentFirstMessage, isAllCorrect) 
                     VALUES 
                     (
                         :surname,
@@ -71,7 +71,7 @@
         }
 
         function getCorrectDomka(){
-            $sql = 'SELECT * FROM wedding.domka WHERE id = 1';
+            $sql = 'SELECT * FROM d29120_wedding.domka WHERE id = 1';
             
             $result = DbConnection::getDatabaseConnection()->query($sql);
             $row = $result->fetch(PDO::FETCH_ASSOC);
@@ -79,7 +79,7 @@
         }
 
         function getPostedRecord(){
-            $sql = 'SELECT * FROM wedding.domka ORDER BY id DESC LIMIT 1';
+            $sql = 'SELECT * FROM d29120_wedding.domka ORDER BY id DESC LIMIT 1';
             
             $result = DbConnection::getDatabaseConnection()->query($sql); 
             $row = $result->fetch(PDO::FETCH_ASSOC); 
