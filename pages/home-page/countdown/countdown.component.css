@@ -1,65 +1,59 @@
 .count-down-timer {
-    background-color: rgb(255, 253, 147);
-    box-shadow: 0px 0px 8px 8px rgb(0 0 0 / 15%);
-    text-align: center;
-    width: 50vw;
-    margin: 0 auto;
-    color: #d9a74a;
-    border-radius: 6px 6px 0px 0px;
-    padding: 0 auto;
-    font-family: 'Lobster';
-    font-size: 2vw;
-    word-spacing: 0.5vw;
-    position: fixed;
-    left: 0;
-    right: 0;
-  
-    > p {
-      margin: 0;
-    }
-  
-    .wrapper {
-      .description,
-      .times {
-        display: grid;
-        grid-template-columns: repeat(5, calc(20% - 10px));
-        grid-column-gap: 10px;
-      }
-  
-      .description {
-        > p {
-          margin-bottom: 2vw;
-          font: normal 2vw lobster;
-          margin: 0;
-          margin-bottom: 1vw;
-        }
-      }
-  
-      .times {
-        p {
-          letter-spacing: -5px;
-          position: relative;
-          margin: 0;
-          font: normal 7vw lobster;
-          ::ng-deep img {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 8vw;
-            display: block;
-            height: 30px;
-          }
-        }
-      }
-    }
+  background-color: rgb(255, 253, 147);
+  box-shadow: 0px 0px 8px 8px rgb(0 0 0 / 15%);
+  text-align: center;
+  width: 50vw;
+  margin: 0 auto;
+  color: #d9a74a;
+  border-radius: 6px 6px 0px 0px;
+  padding: 0 auto;
+  font-family: 'Lobster';
+  font-size: 2vw;
+  word-spacing: 0.5vw;
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+.count-down-timer > p {
+  margin: 0;
+}
+
+.wrapper .times .description {
+  display: grid;
+  grid-template-columns: repeat(5, calc(20% - 10px));
+  grid-column-gap: 10px;
+}
+
+.description > p {
+  margin-bottom: 2vw;
+  font: normal 2vw lobster;
+  margin: 0;
+  margin-bottom: 1vw;
+}
+
+.times p ::ng-deep img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8vw;
+  display: block;
+  height: 30px;
+}
+
+.times p {
+  letter-spacing: -5px;
+  position: relative;
+  margin: 0;
+  font: normal 7vw lobster;
+}
+
+@media screen and (max-width: 8vw) {
+  .count-down-timer {
+    margin: 20px;
   }
-  
-  @media screen and (max-width: 8vw) {
-    .count-down-timer {
-      margin: 20px;
-    }
-  }
+}
 
 #slide-countdown {
     bottom: -21vw;
