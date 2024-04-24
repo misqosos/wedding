@@ -14,7 +14,7 @@
     transition: width 0.5s, height 0.5s;
     position: absolute;
     
-    animation-name: 'image-zoom';
+    animation-name: 'mitko-zoom';
     animation-duration: 3s;
 }
 
@@ -67,7 +67,7 @@
     transition: width 0.5s, height 0.5s;
     position: absolute;
     
-    animation-name: 'image-zoom';
+    animation-name: 'domka-zoom';
     animation-duration: 3s;
 }
 
@@ -139,7 +139,12 @@
   100% { visibility: hidden; }
 }
 
-@keyframes image-zoom {
+@keyframes mitko-zoom {
   50% { width: 14vh; }
   100% { width: 12vh; }
+}
+
+@keyframes domka-zoom {
+  50% { width: 16vh; }
+  100% { width: 14vh; }
 }
