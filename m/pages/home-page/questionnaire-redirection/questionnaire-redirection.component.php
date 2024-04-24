@@ -4,28 +4,23 @@
         include("questionnaire-redirection.component.css");
     ?>
 </style>
-<div class="mitko-wrapper bottom-right-md">
-    <a href="/m/michal" class="mitko bottom-right-md">
-        <img src="assets/images/mitko.png" alt="Mitko" class="mitko bottom-right-md">
-    </a>
-    <div class="mitko-oblacik-wrapper top-left-md">
-        <img src="assets/images/oblacik.png" alt="Oblacik" class="mitko-oblacik">
-        <p>
-            Čo o mne vieš?<br />
-            Klikni ma a zisti!<br />
+
+<div class="collection-wrapper bottom-right">
+    <div class="oblacik right-side">
+        <img src="assets/images/oblacik.png" alt="Oblacik" style="width: 15vh; height: auto;">
+        <p class="oblacik-text">
+            Ahoj,<br>Čo o mne vieš?
         </p>
     </div>
+    <a href="/m/michal" style="display: flex;"><img src="assets/images/mitko.png" alt="Mitko" class="person"></a>
 </div>
 
-<div class="domka-wrapper bottom-left-md">
-    <a href="/m/domka" class="domka bottom-left-md">
-        <img src="assets/images/domka.png" alt="Domka" class="domka bottom-left-md">
-    </a>
-    <div class="domka-oblacik-wrapper top-right-md">
-        <img src="assets/images/oblacik.png" alt="Oblacik" class="domka-oblacik">
-        <p>
-            Čo o mne vieš?<br />
-            Klikni ma a zisti!<br />
+<div class="collection-wrapper bottom-left">
+    <div class="oblacik left-side">
+        <img src="assets/images/oblacik.png" alt="Oblacik" style="width: 15vh; height: auto;">
+        <p class="oblacik-text" style="transform: scaleX(-1);">
+            Ahoj,<br>Čo o mne vieš?
         </p>
     </div>
+    <a href="/m/domka" style="display: flex;"><img src="assets/images/domka.png" alt="Mitko" class="person"></a>
 </div>

@@ -49,7 +49,6 @@
 }
 
 @keyframes header-slide {
-    20% { height: 16vw; }
-    85% { height: 16vw; }
+    50% { height: 16vw; }
     100% { height: 0vw; }
 }

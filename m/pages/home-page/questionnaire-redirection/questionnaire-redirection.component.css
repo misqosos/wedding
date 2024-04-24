@@ -1,151 +1,70 @@
 
-/*mitko party*/
-/*************/
-
-.mitko-wrapper {
+.collection-wrapper {
   position: fixed;
-  width: 28vh;
-  height: 38vh;
+  display: flex;
 }
 
-.mitko {
-    width: 12vh;
-    height: auto; 
-    transition: width 0.5s, height 0.5s;
-    position: absolute;
-    
-    animation-name: 'mitko-zoom';
-    animation-duration: 1.5s;
+.oblacik {
+  position: absolute;
+  top: -13vh;
+  display: flex;
+  justify-content: center;
+  visibility: hidden;
+
+  animation-name: oblacik-show;
+  animation-duration: 2s;
 }
 
-.mitko-oblacik {
-    width: 23vh;
-    height: auto;
-    position: absolute;
+.oblacik-text {
+  position: absolute;
+  top: 0.5vh;
+  text-align: center;
+  font-family: lobster;
+  font-size: 2vh;
 }
 
-.mitko-oblacik-wrapper {
-    position: absolute;
-    width: 20vh;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-
-    animation-name: 'oblacik-show';
-    animation-duration: 1.5s;
-}
-
-.mitko-oblacik-wrapper p {
-    position: absolute;
-    top: 5vh;
-    font-size: 1.5vh;
-    font-family: 'Lobster';
-}
-
-.mitko:hover + .mitko-oblacik-wrapper {
-  visibility: visible;
-}
-
-.mitko:hover {
+.person {
   width: 14vh;
+  height: auto;
+  transition: width 0.5s;
+
+  animation-name: person-zoom;
+  animation-duration: 2s;
 }
 
-/*domka party*/
-/*************/
-
-.domka-wrapper {
-  position: fixed;
-  width: 29vh;
-  height: 38vh;
-}
-
-.domka {
-    width: 14vh; /* Adjust size as needed */
-    height: auto; /* Adjust size as needed */
-    transition: width 0.5s, height 0.5s;
-    position: absolute;
-    
-    animation-name: 'domka-zoom';
-    animation-duration: 1.5s;
-}
-
-.domka-oblacik {
-    width: 23vh; /* Adjust size as needed */
-    height: auto; /* Adjust size as needed */
-    position: absolute;
-    transform: scaleX(-1);
-}
-
-.domka-oblacik-wrapper {
-    position: absolute;
-    width: 20vh;
-    height: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    visibility: hidden;
-
-    animation-name: 'oblacik-show';
-    animation-duration: 1.5s;
-}
-
-.domka-oblacik-wrapper p {
-    position: absolute;
-    left: 5.5vh;
-    top: 5vh;
-    font-size: 1.5vh;
-    font-family: 'Lobster';
-}
-
-.domka:hover + .domka-oblacik-wrapper {
-  visibility: visible;
-}
-
-.domka:hover {
+.person:hover {
   width: 16vh;
 }
 
-
-/*to corners adjustment*/
-/***********************/
-.bottom-left-md {
-  bottom: 0;
-  left: 0;
-  /* transform: scaleX(-1) scaleY(-1); */
+.collection-wrapper:hover .oblacik {
+  visibility: visible;
 }
 
-.bottom-right-md {
+.left-side {
+  transform: scaleX(-1);
+  right: -19.5vw;
+}
+
+.right-side {
+  left: -19.5vw;
+}
+
+.bottom-right {
   bottom: 0;
   right: 0;
-  /* transform: scaleY(-1); */
 }
 
-.top-left-md {
-  top: 0;
+.bottom-left {
+  bottom: 0;
   left: 0;
-  /* transform: scaleY(-1); */
-}
-
-.top-right-md {
-  top: 0;
-  right: 0;
-  /* transform: scaleY(-1); */
 }
 
 @keyframes oblacik-show {
-  50% { visibility: hidden; }
-  99% { visibility: visible; }
+  50% { visibility: visible; }
   100% { visibility: hidden; }
 }
 
-@keyframes mitko-zoom {
-  50% { width: 14vh; }
-  100% { width: 12vh; }
-}
-
-@keyframes domka-zoom {
+@keyframes person-zoom {
   50% { width: 16vh; }
   100% { width: 14vh; }
 }

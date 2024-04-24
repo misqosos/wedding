@@ -24,7 +24,7 @@
             return; 
         }
         document.getElementById('menu').style.animationName = 'header-slide';
-        document.getElementById('menu').style.animationDuration = '6s';
+        document.getElementById('menu').style.animationDuration = '2s';
         sessionStorage.setItem("animationMade", true);
     }
 </script>
