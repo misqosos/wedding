@@ -15,12 +15,6 @@
     top: 0vh;
 }
 
-.title-names-header:hover {
-    .menu-wrapper-names-header{
-        height: 16vh;
-    }
-}
-
 .menu-wrapper-names-header {
     text-align: center;
     transition: height 0.5s;

@@ -13,6 +13,9 @@
     height: auto; /* Adjust size as needed */
     transition: width 0.5s, height 0.5s;
     position: absolute;
+    
+    animation-name: 'mitko-zoom';
+    animation-duration: 3s;
 }
 
 .mitko-oblacik {
@@ -29,6 +32,9 @@
     justify-content: center;
     align-items: center;
     visibility: hidden;
+
+    animation-name: 'mitko-oblacik-show';
+    animation-duration: 3s;
 }
 
 .mitko-oblacik-wrapper p {
@@ -120,4 +126,14 @@
   top: 0;
   right: 0;
   /* transform: scaleY(-1); */
+}
+
+@keyframes mitko-oblacik-show {
+  50% { visibility: visible; }
+  100% { visibility: hidden; }
+}
+
+@keyframes mitko-zoom {
+  50% { width: 14vh; }
+  100% { width: 12vh; }
 }
