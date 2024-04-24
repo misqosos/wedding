@@ -7,7 +7,7 @@
 
 <div class="collection-wrapper bottom-right">
     <div class="oblacik right-side">
-        <img src="assets/images/oblacik.png" alt="Oblacik" style="width: 15vh; height: auto;">
+        <img src="assets/images/oblacik.png" alt="Oblacik" style="width: 20vh; height: auto;">
         <p class="oblacik-text">
             Ahoj,<br>Čo o mne vieš?
         </p>
@@ -17,7 +17,7 @@
 
 <div class="collection-wrapper bottom-left">
     <div class="oblacik left-side">
-        <img src="assets/images/oblacik.png" alt="Oblacik" style="width: 15vh; height: auto;">
+        <img src="assets/images/oblacik.png" alt="Oblacik" style="width: 20vh; height: auto;">
         <p class="oblacik-text" style="transform: scaleX(-1);">
             Ahoj,<br>Čo o mne vieš?
         </p>
