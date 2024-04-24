@@ -30,7 +30,7 @@
         list-style-type: none !important;
         -webkit-list-style-type: none !important;
     }
-    a {
+    a:link {
         text-decoration: none !important;
         -webkit-text-decoration: none !important;
         color: rgb(218, 98, 12);
