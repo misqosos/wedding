@@ -15,7 +15,7 @@
     top: 0vh;
 }
 
-.title-names-header:hover, .title-names-header:active {
+.title-names-header:hover .title-names-header:active {
     height: 30vh;
 }
 
