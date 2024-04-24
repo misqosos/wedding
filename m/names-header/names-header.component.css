@@ -15,8 +15,8 @@
     top: 0vh;
 }
 
-.title-names-header:hover .title-names-header:active .menu-wrapper-names-header {
-    height: 16vh;
+.title-names-header:hover .title-names-header:active {
+    height: 30vh;
 }
 
 .menu-wrapper-names-header {
