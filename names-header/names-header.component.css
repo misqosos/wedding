@@ -28,10 +28,12 @@
 
     li {
         list-style-type: none;
+        -webkit-list-style-type: none;
     }
     a {
         text-decoration: none;
-        text-decoration-style: none;
+        text-decoration-line: none;
+        -webkit-text-decoration-line: none;
         color: rgb(218, 98, 12);
         font-family: 'Lobster';
         font-size: 1.5vw;
