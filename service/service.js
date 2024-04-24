@@ -1,6 +1,6 @@
 
 async function getCorrectDomka() {
-    const response = await fetch('https://sql11.hostcreators.sk:3316/web/backend/domka/index_domka.php');
+    const response = await fetch('https://sql11.hostcreators.sk:3316/index_domka.php');
     const json = await response.json();
     return json;
 }
