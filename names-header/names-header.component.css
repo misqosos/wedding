@@ -31,7 +31,7 @@
     }
     a {
         text-decoration: none;
-        -webkit-text-decoration: none;
+        text-decoration-style: none;
         color: rgb(218, 98, 12);
         font-family: 'Lobster';
         font-size: 1.5vw;
