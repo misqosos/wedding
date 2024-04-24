@@ -29,10 +29,8 @@
     }
 
     function slideDownHeader(){
-        if(document.getElementById('menu').style.height > 0) { 
-            document.getElementById('menu').style.height = 0; 
-            return;
-         }
-        document.getElementById('menu').style.height = '16vh';
+        if(document.getElementById('menu').style.height == 0) { 
+            document.getElementById('menu').style.height = '16vh';
+        } else { document.getElementById('menu').style.height = 0; }
     }
 </script>
