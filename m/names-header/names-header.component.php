@@ -24,15 +24,22 @@
             return; 
         }
         document.getElementById('menu').style.animationName = 'header-slide';
-        document.getElementById('menu').style.animationDuration = '6s';
+        document.getElementById('menu').style.animationDuration = '2s';
         sessionStorage.setItem("animationMade", true);
     }
 
-    function showMenu(){
-        if(document.getElementById("menu").style.height == '24vh') {
+    menuShowed = false;
+    function hideMenu(){
+        if (menuShowed) {
             document.getElementById("menu").style.height = '0vh';
-            return;
+            menuShowed = false;
         }
-        document.getElementById("menu").style.height = '24vh';
+    }
+
+    function showMenu(){
+        setTimeout(() => {
+            document.getElementById("menu").style.height = '24vh';
+            menuShowed = true;
+        }, 100);
     }
 </script>

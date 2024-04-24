@@ -15,7 +15,7 @@
     position: absolute;
     
     animation-name: 'mitko-zoom';
-    animation-duration: 3s;
+    animation-duration: 1.5s;
 }
 
 .mitko-oblacik {
@@ -34,7 +34,7 @@
     visibility: hidden;
 
     animation-name: 'oblacik-show';
-    animation-duration: 3s;
+    animation-duration: 1.5s;
 }
 
 .mitko-oblacik-wrapper p {
