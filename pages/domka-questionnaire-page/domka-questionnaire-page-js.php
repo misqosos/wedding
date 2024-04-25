@@ -150,7 +150,7 @@ function mapCorrectDomka(questionNumber, questionName) {
   this.getCorrectDomka().then((correctDomka) => {
     if (correctDomka) {
       var i = 0;
-      for (let [key, value] of correctDomka.entries()) {
+      for (let [key, value] of Object.entries(correctDomka)) {
         i++;
         const attName = document.getElementById(i.toString()).title
         if (attName == key) {
