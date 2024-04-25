@@ -55,9 +55,9 @@ function nextQuestion() {
   
   checkDateFormat('day', questionName);
   checkDateFormat('month', questionName);
+  if(dateIsNull(questionName)){ templateFormData.dob = null; }
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
-console.log(templateFormData.dob)
   this.compareDomka(templateFormData, questionName);
   
   setElementVisibility('next-button', false);
@@ -205,6 +205,13 @@ function checkDateFormat(id, questionName){
   var element = document.getElementById(id);
   if(Number(element.value) < 10 && dates.includes(questionName) && element.value) {
     element.value = '0' + element.value;
+  }
+  return element.value;
+}
+
+function dateIsNull(questionName){
+  if(checkDateFormat('day', questionName) == '' || checkDateFormat('month', questionName) == '' || checkDateFormat('year', questionName) == ''){
+    return true;
   }
 }
 
