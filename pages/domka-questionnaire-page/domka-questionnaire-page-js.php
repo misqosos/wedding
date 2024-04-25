@@ -52,12 +52,8 @@ function onSubmit() {
 
 function nextQuestion() {
   const questionName = document.getElementById(this.questionNumber.toString()).title;
-  
-  checkDateFormat('day', questionName);
-  checkDateFormat('month', questionName);
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
-  checkNullDate(questionName, templateFormData);
 
   this.compareDomka(templateFormData, questionName);
   
@@ -111,10 +107,10 @@ function compareObjects(referenceObj, comparingObj, questionName) {
     }
     // pre datumy
     if (this.dates.includes(questionName)) {
-      if (comparingObj[questionName]) {
+      if (comparingObj[questionName] || comparingObj[questionName][0] != '' || comparingObj[questionName][1] != '' || comparingObj[questionName][2] != '') {
         comparingObj[questionName] = comparingObj[questionName].reverse().join("-");
       }
-      if (comparingObj[questionName] == referenceObj[questionName]) {
+      if (areEqualDates(comparingObj[questionName], referenceObj[questionName])) {
         this.showImage('happy-domka');
         this.correctAnswersNum++;
       } else {

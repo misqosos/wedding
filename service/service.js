@@ -46,3 +46,15 @@ function formatDate(date, onlyDate = false, toDb = false) {
 
     return [day, month, year].join('.') + ' o ' + [hours, minutes].join(':');
 }
+
+function areEqualDates(dateToCompare, referenceDate) {
+    var toCompare = new Date(dateToCompare);
+    var reference = new Date(referenceDate);
+
+    if (toCompare.getFullYear() == reference.getFullYear() &&
+        toCompare.getMonth() + 1 == reference.getMonth() + 1 &&
+        toCompare.getDate() == reference.getDate()) {
+            return true;
+    }
+    return false;
+}
