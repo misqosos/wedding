@@ -6,11 +6,27 @@
 </style>
 <div class="title-names-header" id="slide-names-header" onclick="showMenu()">
     <div class="menu-wrapper-names-header" id="menu">
-        <li style="margin-bottom: 1vh;"><p style="font-size: 4vh;">Menu</p></li>
-        <li><a href="">Náš príbeh</a></li>
-        <li><a href="">Čo budem piť?</a></li>
-        <li><a href="">Ako sa tam dostanem?</a></li>
-        <li><a href="">Chcem spať?</a></li>
+        <p style="font-size: 4vh; margin-bottom: 1vh;">Menu</p>
+        <li>
+            <label class="option-decor">&#9825;&nbsp;
+                <a href="">Náš príbeh</a>
+            &nbsp;&#9825;</label>
+        </li>
+        <li>
+            <label class="option-decor">&#9825;&nbsp;
+                <a href="">Čo budem piť?</a>
+            &nbsp;&#9825;</label>
+        </li>
+        <li>
+            <label class="option-decor">&#9825;&nbsp;
+                <a href="">Ako sa tam dostanem?</a>
+            &nbsp;&#9825;</label>
+        </li>
+        <li>
+            <label class="option-decor">&#9825;&nbsp;
+                <a href="">Chcem spať?</a>
+            &nbsp;&#9825;</label>
+        </li>
     </div>
     <p>Domka & Michal</p>
 </div>
