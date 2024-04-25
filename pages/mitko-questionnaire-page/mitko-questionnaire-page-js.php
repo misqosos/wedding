@@ -93,6 +93,7 @@ function areEqualArrays(a, b) {
 }
 
 function compareObjects(referenceObj, comparingObj, questionName) {
+  this.mapCorrectMitko(this.questionNumber, questionName);
   if (referenceObj) {
     // pre arrays
     if (this.arrays.includes(questionName)) {
@@ -103,6 +104,20 @@ function compareObjects(referenceObj, comparingObj, questionName) {
       } else {
         this.showImage('sad-mitko');
       }
+      return;
+    }
+    // pre datumy
+    if (this.dates.includes(questionName)) {
+      if (comparingObj[questionName]) {
+        comparingObj[questionName] = comparingObj[questionName].reverse().join("-");
+      }
+      if (comparingObj[questionName] == referenceObj[questionName]) {
+        this.showImage('happy-domka');
+        this.correctAnswersNum++;
+      } else {
+        this.showImage('sad-domka');
+      }
+      return;
     }
     // pre ostatne
     if (comparingObj[questionName] == referenceObj[questionName]) {
@@ -116,8 +131,6 @@ function compareObjects(referenceObj, comparingObj, questionName) {
   } else {
     console.log('Referencny Mitko nie je v databaze.');
   }
-
-  this.mapCorrectMitko(this.questionNumber, questionName);
 }
 
 function compareMitko(comparingObj, questionName) {
