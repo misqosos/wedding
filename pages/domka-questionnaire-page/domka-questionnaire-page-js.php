@@ -109,7 +109,7 @@ function compareObjects(referenceObj, comparingObj, questionName) {
     if (this.dates.includes(questionName)) {
       if (comparingObj[questionName] || comparingObj[questionName][0] != '' || comparingObj[questionName][1] != '' || comparingObj[questionName][2] != '') {
         comparingObj[questionName] = comparingObj[questionName].reverse().join("-");
-      }
+      } else { comparingObj[questionName] = null }
       if (areEqualDates(comparingObj[questionName], referenceObj[questionName])) {
         this.showImage('happy-domka');
         this.correctAnswersNum++;
