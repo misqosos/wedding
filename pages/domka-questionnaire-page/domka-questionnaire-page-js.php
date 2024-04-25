@@ -57,7 +57,7 @@ function nextQuestion() {
   checkDateFormat('month', questionName);
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
-  checkNullDate(questionName, templateFormData);
+  // checkNullDate(questionName, templateFormData);
 
   this.compareDomka(templateFormData, questionName);
   
@@ -207,14 +207,13 @@ function checkDateFormat(id, questionName){
   if(Number(element.value) < 10 && dates.includes(questionName) && element.value) {
     element.value = '0' + element.value;
   }
-  return element.value;
 }
 
 function checkNullDate(questionName, formData){
   if(this.dates.includes(questionName)){
     if(checkDateFormat('day', questionName) == '' || checkDateFormat('month', questionName) == '' || checkDateFormat('year', questionName) == ''){
-    formData[questionName] = null;
-  }
+      formData[questionName] = null;
+    }
   }
 }
 
