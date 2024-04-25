@@ -213,17 +213,15 @@ function makeFinalStatement(){
 }
 
 function checkDateFormat(id, questionName){
-  if (this.dates.includes(questionName)) {
-    var element = document.getElementById(id);
-    if(Number(element.value) < 10 && dates.includes(questionName) && element.value) {
-      element.value = '0' + element.value;
-    }
+  var element = document.getElementById(id);
+  if(Number(element.value) < 10 && dates.includes(questionName) && element.value) {
+    element.value = '0' + element.value;
   }
 }
 
 function checkNullDate(questionName, formData){
   if(this.dates.includes(questionName)){
-    if(checkDateFormat('day', questionName) == '' || checkDateFormat('month', questionName) == '' || checkDateFormat('year', questionName) == ''){
+    if(document.getElementById('day').value == '' || document.getElementById('month').value == '' || document.getElementById('year').value == ''){
       formData[questionName] = null;
     }
   }
