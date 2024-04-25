@@ -57,7 +57,7 @@ function nextQuestion() {
   checkDateFormat('month', questionName);
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
-
+console.log(templateFormData.dob)
   this.compareDomka(templateFormData, questionName);
   
   setElementVisibility('next-button', false);
