@@ -40,9 +40,10 @@
 .option-decor {
     color: firebrick;
     visibility: hidden;
+    font-size: 2.5vh;
 }
 
-.option-decor:hover {
+.option-decor:active {
     visibility: visible;
 }
 
