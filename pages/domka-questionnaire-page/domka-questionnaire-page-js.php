@@ -60,9 +60,10 @@ function nextQuestion() {
   const questionName = document.getElementById(this.questionNumber.toString()).title;
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
-  if (templateFormData.dob) {
+  if (templateFormData.dob && dates.includes(questionName)) {
     templateFormData.dob = formatDate(templateFormData.dob.reverse().join("-"), true, true);
   }
+  console.log(templateFormData.dob)
 
   this.compareDomka(templateFormData, questionName);
   
