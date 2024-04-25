@@ -24,9 +24,9 @@
             <div id="2" title="dob" style="display: none;">
                 <p>Kedy som sa narodila?</p> 
                 <div class="form-options-date">
-                    <input type="text" class="text-dob" name="dob" maxlength="2" placeholder="Deň"/> . 
-                    <input type="text" class="text-dob" name="dob" maxlength="2" placeholder="Mesiac"/> . 
-                    <input type="text" class="text-dob" name="dob" maxlength="4" placeholder="Rok"/> 
+                    <input id="day" type="text" class="text-dob" name="dob" maxlength="2" placeholder="Deň"/> . 
+                    <input id="month" type="text" class="text-dob" name="dob" maxlength="2" placeholder="Mesiac"/> . 
+                    <input id="year" class="text-dob" name="dob" maxlength="4" placeholder="Rok"/> 
                 </div>
             </div>
             

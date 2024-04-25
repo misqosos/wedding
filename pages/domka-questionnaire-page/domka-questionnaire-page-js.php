@@ -58,6 +58,9 @@ function onSubmit() {
 
 function nextQuestion() {
   const questionName = document.getElementById(this.questionNumber.toString()).title;
+  if(Number(document.getElementById("month").value) < 10 && dates.includes(questionName)) {
+    document.getElementById("month").value = '0' + document.getElementById("month").value;
+  }
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
   if (templateFormData.dob && dates.includes(questionName)) {

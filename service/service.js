@@ -41,8 +41,8 @@ function formatDate(date, onlyDate = false, toDb = false) {
     if (minutes.length < 2) { minutes = '0' + minutes; } 
 
     if(toDb){
-        if(month[1] == null) { month = '0' + month }
-        if(day[1] == null) { day = '0' + day }
+        if(month.length == 1) { month = '0' + month }
+        if(day.length == 1) { day = '0' + day }
         return [year, month, day].join('-')
     }
 
