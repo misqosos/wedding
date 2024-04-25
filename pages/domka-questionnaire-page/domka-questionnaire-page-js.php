@@ -131,8 +131,6 @@ function compareObjects(referenceObj, comparingObj, questionName) {
   } else {
     console.log('Referencna Domka nie je v databaze.');
   }
-
-  this.mapCorrectDomka(this.questionNumber, questionName);
 }
 
 function compareDomka(comparingObj, questionName) {
@@ -146,7 +144,7 @@ function compareDomka(comparingObj, questionName) {
   })
 }
 
-function mapCorrectDomka(questionNumber, questionName) {
+function mapCorrectDomka() {
   this.getCorrectDomka().then((correctDomka) => {
     if (correctDomka) {
       var i = 0;
