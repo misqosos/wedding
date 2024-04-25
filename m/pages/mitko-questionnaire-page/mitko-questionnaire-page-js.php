@@ -39,15 +39,9 @@ async function onSubmit() {
   console.log(questionName)
   const templateFormData = getTemplateFormData('mitko-form', this.form, questionName);
 
-  this.getCorrectMitko().then((correctMitko) => {
-    if (correctMitko) {
-      this.compareObjects(correctMitko, templateFormData, questionName);
-      this.makeFinalStatement();
-    } else {
-      console.log('Referencny Mitko nie je v databaze.');
-    }
-  })
-  
+  this.formSubmitted = true;
+  this.compareMitko(templateFormData, questionName);
+
   setElementVisibility(this.questionNumber.toString(), false);
   setElementVisibility('submit-button', false);
   
@@ -127,6 +121,7 @@ function compareMitko(comparingObj, questionName) {
   this.getCorrectMitko().then((correctMitko) => {
     if (correctMitko) {
       this.compareObjects(correctMitko, comparingObj, questionName);
+      if(this.formSubmitted) { makeFinalStatement(); }
     } else {
       console.log('Referencny Mitko nie je v databaze.');
     }

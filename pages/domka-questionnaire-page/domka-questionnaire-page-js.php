@@ -11,7 +11,7 @@
   include("service/form-service.js")
 ?>
 questionNumber = 1;
-correctAnswersNum = 1;
+correctAnswersNum = 0;
 hobbies = [];
 arrays = ['hobbies'];
 booleans = ['sentFirstMessage', 'isAllCorrect'];
@@ -38,22 +38,17 @@ form = {
 };
 
 function onSubmit() {
+  mapCorrectDomka();
   const questionName = document.getElementById(this.questionNumber.toString()).title;
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
+
+  this.formSubmitted = true;
   this.compareDomka(templateFormData, questionName);
 
   setElementVisibility(this.questionNumber.toString(), false);
   setElementVisibility('submit-button', false);
 
   this.postDomka(templateFormData)
-
-  if (this.questionNumber == this.correctAnswersNum) {
-    this.setElementVisibility('all-correct', true)
-    return;
-  }
-  this.correctAnswersNum--
-  document.getElementById('corrects-amount').innerHTML = 'Uhádol si '+ this.correctAnswersNum +' / '+ this.questionNumber +' odpovedí.'
-  this.setElementVisibility('not-all-correct', true)
 }
 
 function nextQuestion() {
@@ -111,7 +106,6 @@ function compareObjects(referenceObj, comparingObj, questionName) {
       } else {
         this.showImage('sad-domka');
       } 
-      return;
     }
     // pre datumy
     if (this.dates.includes(questionName)) {
@@ -124,7 +118,6 @@ function compareObjects(referenceObj, comparingObj, questionName) {
       } else {
         this.showImage('sad-domka');
       }
-      return;
     }
     // pre ostatne
     if (comparingObj[questionName] == referenceObj[questionName]) {
@@ -146,6 +139,7 @@ function compareDomka(comparingObj, questionName) {
   this.getCorrectDomka().then((correctDomka) => {
     if (correctDomka) {
       this.compareObjects(correctDomka, comparingObj, questionName);
+      if(this.formSubmitted) { makeFinalStatement(); }
     } else {
       console.log('Referencna Domka nie je v databaze.');
     }
@@ -155,22 +149,44 @@ function compareDomka(comparingObj, questionName) {
 function mapCorrectDomka(questionNumber, questionName) {
   this.getCorrectDomka().then((correctDomka) => {
     if (correctDomka) {
-      if (this.dates?.concat(this.booleans, this.arrays).includes(questionName)) {
-        if (this.arrays?.includes(questionName)) {
-          let convertedArray = JSON.parse(correctDomka[questionName]);
-          this.correctAnswers.set(questionNumber, convertedArray.concat());
+      var i = 0;
+      for (let [key, value] of correctDomka.entries()) {
+        i++;
+        const attName = document.getElementById(i.toString()).title
+        if (attName == key) {
+          if (this.arrays?.includes(key)) {
+            let convertedArray = JSON.parse(value);
+            this.correctAnswers.set(i, convertedArray.concat());
+          }
+  
+          if (this.dates?.includes(key)) {
+            let date = this.formatDate(value, true);
+            this.correctAnswers.set(i, date);
+          }
+  
+          if (this.booleans?.includes(key)) {
+            let convertedBoolean = Boolean(Number(value)) == true ? "Áno" : "Nie";
+            this.correctAnswers.set(i, convertedBoolean);
+          }
         }
-        if (this.dates?.includes(questionName)) {
-          let date = this.formatDate(correctDomka[questionName], true);
-          this.correctAnswers.set(questionNumber, date);
-        }
-        if (this.booleans?.includes(questionName)) {
-          let convertedBoolean = Boolean(Number(correctDomka[questionName])) == true ? "Áno" : "Nie";
-          this.correctAnswers.set(questionNumber, convertedBoolean);
-        }
-      } else {
-        this.correctAnswers.set(questionNumber, correctDomka[questionName]);
       }
+
+      // if (this.dates?.concat(this.booleans, this.arrays).includes(questionName)) {
+      //   if (this.arrays?.includes(questionName)) {
+      //     let convertedArray = JSON.parse(correctDomka[questionName]);
+      //     this.correctAnswers.set(questionNumber, convertedArray.concat());
+      //   }
+      //   if (this.dates?.includes(questionName)) {
+      //     let date = this.formatDate(correctDomka[questionName], true);
+      //     this.correctAnswers.set(questionNumber, date);
+      //   }
+      //   if (this.booleans?.includes(questionName)) {
+      //     let convertedBoolean = Boolean(Number(correctDomka[questionName])) == true ? "Áno" : "Nie";
+      //     this.correctAnswers.set(questionNumber, convertedBoolean);
+      //   }
+      // } else {
+      //   this.correctAnswers.set(questionNumber, correctDomka[questionName]);
+      // }
     } else {
       console.log('Referencna Domka nie je v databaze.');
     }
@@ -213,6 +229,15 @@ function checkDateFormat(id, questionName){
   if(Number(element.value) < 10 && dates.includes(questionName)) {
     element.value = '0' + element.value;
   }
+}
+
+function makeFinalStatement(){    
+  if (this.questionNumber == this.correctAnswersNum) {
+      this.setElementVisibility('all-correct', true)
+      return;
+    }
+  document.getElementById('corrects-amount').innerHTML = 'Uhádol si '+ this.correctAnswersNum +' / '+ this.questionNumber +' odpovedí.'
+  this.setElementVisibility('not-all-correct', true)
 }
 
 </script>

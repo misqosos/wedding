@@ -41,14 +41,8 @@ function onSubmit() {
   const questionName = document.getElementById(this.questionNumber.toString()).title;
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
 
-  this.getCorrectDomka().then((correctDomka) => {
-    if (correctDomka) {
-      this.compareObjects(correctDomka, templateFormData, questionName);
-      this.makeFinalStatement();
-    } else {
-      console.log('Referencna Domka nie je v databaze.');
-    }
-  })
+  this.formSubmitted = true;
+  this.compareDomka(templateFormData, questionName);
 
   setElementVisibility(this.questionNumber.toString(), false);
   setElementVisibility('submit-button', false);
@@ -129,6 +123,7 @@ function compareDomka(comparingObj, questionName) {
   this.getCorrectDomka().then((correctDomka) => {
     if (correctDomka) {
       this.compareObjects(correctDomka, comparingObj, questionName);
+      if(this.formSubmitted) { makeFinalStatement(); }
     } else {
       console.log('Referencna Domka nie je v databaze.');
     }
