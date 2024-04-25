@@ -203,7 +203,7 @@ function showCorrectAnswers(){
 
 function checkDateFormat(id, questionName){
   var element = document.getElementById(id);
-  if(Number(element.value) < 10 && dates.includes(questionName)) {
+  if(Number(element.value) < 10 && dates.includes(questionName) && element.value) {
     element.value = '0' + element.value;
   }
 }
