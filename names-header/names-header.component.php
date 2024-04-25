@@ -25,6 +25,9 @@
         }
         document.getElementById('menu').style.animationName = 'header-slide';
         document.getElementById('menu').style.animationDuration = '2s';
-        sessionStorage.setItem("animationMade", true);
+        
+        setTimeout(() => {
+            sessionStorage.setItem("animationMade", true);
+        }, 2000);
     }
 </script>
