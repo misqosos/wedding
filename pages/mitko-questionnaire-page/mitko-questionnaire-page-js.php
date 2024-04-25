@@ -112,10 +112,10 @@ function compareObjects(referenceObj, comparingObj, questionName) {
         comparingObj[questionName] = comparingObj[questionName].reverse().join("-");
       }
       if (comparingObj[questionName] == referenceObj[questionName]) {
-        this.showImage('happy-domka');
+        this.showImage('happy-mitko');
         this.correctAnswersNum++;
       } else {
-        this.showImage('sad-domka');
+        this.showImage('sad-mitko');
       }
       return;
     }
