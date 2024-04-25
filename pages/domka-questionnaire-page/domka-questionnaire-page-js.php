@@ -58,7 +58,7 @@ function nextQuestion() {
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
   checkNullDate(questionName, templateFormData);
-  
+
   this.compareDomka(templateFormData, questionName);
   
   setElementVisibility('next-button', false);
@@ -211,9 +211,10 @@ function checkDateFormat(id, questionName){
 }
 
 function checkNullDate(questionName, formData){
-  if(!this.dates.includes(questionName)){ return; }
-  if(checkDateFormat('day', questionName) == '' || checkDateFormat('month', questionName) == '' || checkDateFormat('year', questionName) == ''){
+  if(this.dates.includes(questionName)){
+    if(checkDateFormat('day', questionName) == '' || checkDateFormat('month', questionName) == '' || checkDateFormat('year', questionName) == ''){
     formData[questionName] = null;
+  }
   }
 }
 
