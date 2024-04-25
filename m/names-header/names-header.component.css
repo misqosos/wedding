@@ -43,7 +43,7 @@
     font-size: 2.5vh;
 }
 
-.option-decor:active {
+.option-decor:hover {
     visibility: visible;
 }
 
