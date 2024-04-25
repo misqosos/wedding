@@ -38,13 +38,7 @@ function formatDate(date, onlyDate = false, toDb = false) {
     hours = '' + d.getHours();
     minutes = '' + d.getMinutes();
 
-    if (minutes.length < 2) { minutes = '0' + minutes; } 
-
-    if(toDb){
-        if(month.length == 1) { month = '0' + month }
-        if(day.length == 1) { day = '0' + day }
-        return [year, month, day].join('-')
-    }
+    if (minutes.length < 2) { minutes = '0' + minutes; }
 
     if(onlyDate){
         return [day, month, year].join('.')

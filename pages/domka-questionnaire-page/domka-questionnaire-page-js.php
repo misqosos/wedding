@@ -58,15 +58,11 @@ function onSubmit() {
 
 function nextQuestion() {
   const questionName = document.getElementById(this.questionNumber.toString()).title;
-  if(Number(document.getElementById("month").value) < 10 && dates.includes(questionName)) {
-    document.getElementById("month").value = '0' + document.getElementById("month").value;
-  }
+  
+  checkDateFormat('day', questionName);
+  checkDateFormat('month', questionName);
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
-  if (templateFormData.dob && dates.includes(questionName)) {
-    templateFormData.dob = formatDate(templateFormData.dob.reverse().join("-"), true, true);
-  }
-  console.log(templateFormData.dob)
 
   this.compareDomka(templateFormData, questionName);
   
@@ -114,7 +110,21 @@ function compareObjects(referenceObj, comparingObj, questionName) {
         this.correctAnswersNum++;
       } else {
         this.showImage('sad-domka');
+      } 
+      return;
+    }
+    // pre datumy
+    if (this.dates.includes(questionName)) {
+      if (comparingObj[questionName]) {
+        comparingObj[questionName] = comparingObj[questionName].reverse().join("-");
       }
+      if (comparingObj[questionName] == referenceObj[questionName]) {
+        this.showImage('happy-domka');
+        this.correctAnswersNum++;
+      } else {
+        this.showImage('sad-domka');
+      }
+      return;
     }
     // pre ostatne
     if (comparingObj[questionName] == referenceObj[questionName]) {
@@ -196,6 +206,13 @@ function showCorrectAnswers(){
     myHTML += 'Otázka č. '+key+'. : <b>'+value+'</b><br>'
   }
   wrapper.innerHTML = myHTML;
+}
+
+function checkDateFormat(id, questionName){
+  var element = document.getElementById(id);
+  if(Number(element.value) < 10 && dates.includes(questionName)) {
+    element.value = '0' + element.value;
+  }
 }
 
 </script>
