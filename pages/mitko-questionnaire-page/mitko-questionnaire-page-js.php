@@ -50,7 +50,11 @@ async function onSubmit() {
 function nextQuestion() { 
   const questionName = document.getElementById(this.questionNumber.toString()).title;
 
+  checkDateFormat('day', questionName);
+  checkDateFormat('month', questionName);
+
   const templateFormData = getTemplateFormData('mitko-form', this.form, questionName);
+  checkNullDate(questionName, templateFormData);
 
   this.compareMitko(templateFormData, questionName);
   
@@ -190,6 +194,23 @@ function makeFinalStatement(){
     }
   document.getElementById('corrects-amount').innerHTML = 'Uhádol si '+ this.correctAnswersNum +' / '+ this.questionNumber +' odpovedí.'
   this.setElementVisibility('not-all-correct', true)
+}
+
+function checkDateFormat(id, questionName){
+  if (this.dates.includes(questionName)) {
+    var element = document.getElementById(id);
+    if(Number(element.value) < 10 && dates.includes(questionName) && element.value) {
+      element.value = '0' + element.value;
+    }
+  }
+}
+
+function checkNullDate(questionName, formData){
+  if(this.dates.includes(questionName)){
+    if(checkDateFormat('day', questionName) == '' || checkDateFormat('month', questionName) == '' || checkDateFormat('year', questionName) == ''){
+      formData[questionName] = null;
+    }
+  }
 }
 
 </script>

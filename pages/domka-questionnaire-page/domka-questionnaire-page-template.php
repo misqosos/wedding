@@ -26,7 +26,7 @@
                 <div class="form-options-date">
                     <input id="day" type="text" class="text-dob" name="dob" maxlength="2" placeholder="Deň"/> . 
                     <input id="month" type="text" class="text-dob" name="dob" maxlength="2" placeholder="Mesiac"/> . 
-                    <input id="year" class="text-dob" name="dob" maxlength="4" placeholder="Rok"/> 
+                    <input id="year" type="text" class="text-dob" name="dob" maxlength="4" placeholder="Rok"/> 
                 </div>
             </div>
             

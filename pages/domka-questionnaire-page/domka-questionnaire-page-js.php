@@ -203,10 +203,21 @@ function showCorrectAnswers(){
   wrapper.innerHTML = myHTML;
 }
 
+function makeFinalStatement(){    
+  if (this.questionNumber == this.correctAnswersNum) {
+      this.setElementVisibility('all-correct', true)
+      return;
+    }
+  document.getElementById('corrects-amount').innerHTML = 'Uhádol si '+ this.correctAnswersNum +' / '+ this.questionNumber +' odpovedí.'
+  this.setElementVisibility('not-all-correct', true)
+}
+
 function checkDateFormat(id, questionName){
-  var element = document.getElementById(id);
-  if(Number(element.value) < 10 && dates.includes(questionName) && element.value) {
-    element.value = '0' + element.value;
+  if (this.dates.includes(questionName)) {
+    var element = document.getElementById(id);
+    if(Number(element.value) < 10 && dates.includes(questionName) && element.value) {
+      element.value = '0' + element.value;
+    }
   }
 }
 
@@ -218,13 +229,5 @@ function checkNullDate(questionName, formData){
   }
 }
 
-function makeFinalStatement(){    
-  if (this.questionNumber == this.correctAnswersNum) {
-      this.setElementVisibility('all-correct', true)
-      return;
-    }
-  document.getElementById('corrects-amount').innerHTML = 'Uhádol si '+ this.correctAnswersNum +' / '+ this.questionNumber +' odpovedí.'
-  this.setElementVisibility('not-all-correct', true)
-}
 
 </script>

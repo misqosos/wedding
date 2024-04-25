@@ -24,7 +24,9 @@
             <div id="2" title="dob" style="display: none;">
                 <p>Kedy som sa narodil?</p>
                 <div class="form-options-date">
-                    <input type="date" name="dob"/> 
+                    <input id="day" type="text" class="text-dob" name="dob" maxlength="2" placeholder="Deň"/> . 
+                    <input id="month" type="text" class="text-dob" name="dob" maxlength="2" placeholder="Mesiac"/> . 
+                    <input id="year" type="text" class="text-dob" name="dob" maxlength="4" placeholder="Rok"/> 
                 </div>
             </div>
             
@@ -44,7 +46,7 @@
             <div id="4" title="age" style="display: none;">
                 <p>Takže koľko to mám rokov?</p>
                 <div class="form-options-date">
-                    <input type="text" name="age"/> 
+                    <input type="text-age" name="age"/> 
                 </div>
             </div>
             
