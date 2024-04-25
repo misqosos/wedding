@@ -29,7 +29,7 @@ function postMitko(formular) {
         .then((json) => console.log(json));
 }
 
-function formatDate(date, onlyDate = false) {
+function formatDate(date, onlyDate = false, toDb = false) {
     var d = new Date(date);
 
     year = d.getFullYear();
@@ -39,6 +39,12 @@ function formatDate(date, onlyDate = false) {
     minutes = '' + d.getMinutes();
 
     if (minutes.length < 2) { minutes = '0' + minutes; } 
+
+    if(toDb){
+        if(month.length == 1) { month = '0' + month }
+        if(day.length == 1) { day = '0' + day }
+        return [year, month, day].join('-')
+    }
 
     if(onlyDate){
         return [day, month, year].join('.')

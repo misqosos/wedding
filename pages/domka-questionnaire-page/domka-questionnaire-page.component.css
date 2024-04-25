@@ -29,6 +29,7 @@
   color: rgb(218, 98, 12);
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;
+  margin-top: 0;
 }
 
 .form-options-radio {
@@ -46,7 +47,7 @@
 	border: none;
   position: absolute;  
   right: -18vw; 
-  top: 8vh;
+  top: 1vh;
   display: flex;
   align-items: center;
   font-size: 2vw;
@@ -96,20 +97,22 @@ input[type=checkbox] {
   cursor: pointer;
 }
 
-input[type=date] {
-  width: 15vw;
+.text-dob {
+  text-align: center;
+  width: 7vw;
   height: auto;
   font-size: 2vw;
   border-radius: 1vw;
   padding: 0.5vw 1vw;
   font-family: 'Lobster';
+  border-color: rgb(255, 253, 147);
   background-color: rgb(255, 253, 147);
   color: #d9a74a;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;
 }
 
-input[type=text] {
+input[type=text-age] {
   width: 15vw;
   height: auto;
   font-size: 2vw;
