@@ -57,7 +57,7 @@ function nextQuestion() {
   checkDateFormat('month', questionName);
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
-  // checkNullDate(questionName, templateFormData);
+  checkNullDate(questionName, templateFormData);
 
   this.compareDomka(templateFormData, questionName);
   
@@ -96,6 +96,7 @@ function areEqualArrays(a, b) {
 }
 
 function compareObjects(referenceObj, comparingObj, questionName) {
+  this.mapCorrectDomka(this.questionNumber, questionName);
   if (referenceObj) {
     // pre arrays
     if (this.arrays.includes(questionName)) {
@@ -106,6 +107,7 @@ function compareObjects(referenceObj, comparingObj, questionName) {
       } else {
         this.showImage('sad-domka');
       } 
+      return;
     }
     // pre datumy
     if (this.dates.includes(questionName)) {
@@ -118,6 +120,7 @@ function compareObjects(referenceObj, comparingObj, questionName) {
       } else {
         this.showImage('sad-domka');
       }
+      return;
     }
     // pre ostatne
     if (comparingObj[questionName] == referenceObj[questionName]) {
@@ -131,8 +134,6 @@ function compareObjects(referenceObj, comparingObj, questionName) {
   } else {
     console.log('Referencna Domka nie je v databaze.');
   }
-
-  this.mapCorrectDomka(this.questionNumber, questionName);
 }
 
 function compareDomka(comparingObj, questionName) {
