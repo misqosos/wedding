@@ -50,11 +50,7 @@ async function onSubmit() {
 function nextQuestion() { 
   const questionName = document.getElementById(this.questionNumber.toString()).title;
 
-  checkDateFormat('day', questionName);
-  checkDateFormat('month', questionName);
-
   const templateFormData = getTemplateFormData('mitko-form', this.form, questionName);
-  checkNullDate(questionName, templateFormData);
 
   this.compareMitko(templateFormData, questionName);
   
@@ -111,7 +107,7 @@ function compareObjects(referenceObj, comparingObj, questionName) {
       if (comparingObj[questionName]) {
         comparingObj[questionName] = comparingObj[questionName].reverse().join("-");
       }
-      if (comparingObj[questionName] == referenceObj[questionName]) {
+      if (areEqualDates(comparingObj[questionName], referenceObj[questionName])) {
         this.showImage('happy-mitko');
         this.correctAnswersNum++;
       } else {
@@ -134,6 +130,7 @@ function compareObjects(referenceObj, comparingObj, questionName) {
 }
 
 function compareMitko(comparingObj, questionName) {
+  checkNullDate(questionName, comparingObj);
   this.getCorrectMitko().then((correctMitko) => {
     if (correctMitko) {
       this.compareObjects(correctMitko, comparingObj, questionName);
@@ -218,8 +215,11 @@ function checkDateFormat(id, questionName){
 
 function checkNullDate(questionName, formData){
   if(this.dates.includes(questionName)){
-    if(document.getElementById('day').value == '' || document.getElementById('month').value == '' || document.getElementById('year').value == ''){
-      formData[questionName] = null;
+    for (let index = 0; index < document.getElementsByName(questionName).length; index++) {
+      if(formData[questionName][index] == ''){
+        formData[questionName] = null;
+        return;
+      }
     }
   }
 }

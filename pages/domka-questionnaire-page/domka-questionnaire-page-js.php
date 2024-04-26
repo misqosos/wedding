@@ -54,7 +54,6 @@ function nextQuestion() {
   const questionName = document.getElementById(this.questionNumber.toString()).title;
 
   const templateFormData = getTemplateFormData('domka-form', this.form, questionName);
-
   this.compareDomka(templateFormData, questionName);
   
   setElementVisibility('next-button', false);
@@ -107,7 +106,7 @@ function compareObjects(referenceObj, comparingObj, questionName) {
     }
     // pre datumy
     if (this.dates.includes(questionName)) {
-      if (comparingObj[questionName] || comparingObj[questionName][0] != '' || comparingObj[questionName][1] != '' || comparingObj[questionName][2] != '') {
+      if (comparingObj[questionName]) {
         comparingObj[questionName] = comparingObj[questionName].reverse().join("-");
       } else { comparingObj[questionName] = null }
       if (areEqualDates(comparingObj[questionName], referenceObj[questionName])) {
@@ -133,6 +132,7 @@ function compareObjects(referenceObj, comparingObj, questionName) {
 }
 
 function compareDomka(comparingObj, questionName) {
+  checkNullDate(questionName, comparingObj);
   this.getCorrectDomka().then((correctDomka) => {
     if (correctDomka) {
       this.compareObjects(correctDomka, comparingObj, questionName);
@@ -208,17 +208,13 @@ function makeFinalStatement(){
   this.setElementVisibility('not-all-correct', true)
 }
 
-function checkDateFormat(id, questionName){
-  var element = document.getElementById(id);
-  if(Number(element.value) < 10 && dates.includes(questionName) && element.value) {
-    element.value = '0' + element.value;
-  }
-}
-
 function checkNullDate(questionName, formData){
   if(this.dates.includes(questionName)){
-    if(document.getElementById('day').value == '' || document.getElementById('month').value == '' || document.getElementById('year').value == ''){
-      formData[questionName] = null;
+    for (let index = 0; index < document.getElementsByName(questionName).length; index++) {
+      if(formData[questionName][index] == ''){
+        formData[questionName] = null;
+        return;
+      }
     }
   }
 }
